@@ -1,7 +1,7 @@
-import { EncodeOptions as MozjpegOptions } from '@wasm-codecs/mozjpeg/lib/types';
-import { EncodeOptions as OxipngOptions } from '@wasm-codecs/oxipng/lib/types';
-import { EncodeOptions as GifsicleOptions } from '@wasm-codecs/gifsicle/lib/types';
-import { WebpOptions } from 'sharp';
+import type { EncodeOptions as MozjpegOptions } from '@wasm-codecs/mozjpeg/lib/types';
+import type { EncodeOptions as OxipngOptions } from '@wasm-codecs/oxipng/lib/types';
+import type { EncodeOptions as GifsicleOptions } from '@wasm-codecs/gifsicle/lib/types';
+import type { WebpOptions } from 'sharp';
 
 export interface LoaderOptions {
   optimize?: boolean;
