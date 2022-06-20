@@ -2,6 +2,7 @@ import type { EncodeOptions as MozjpegOptions } from '@wasm-codecs/mozjpeg/lib/t
 import type { EncodeOptions as OxipngOptions } from '@wasm-codecs/oxipng/lib/types';
 import type { EncodeOptions as GifsicleOptions } from '@wasm-codecs/gifsicle/lib/types';
 import type { WebpOptions } from 'sharp';
+import type { OptimizeOptions as SvgoOptions } from "svgo"
 
 export interface LoaderOptions {
   optimize?: boolean;
@@ -11,7 +12,7 @@ export interface LoaderOptions {
   oxipng?: OxipngOptions;
   webp?: WebpOptions;
   gifsicle?: GifsicleOptions;
-  svgo?: Record<string, unknown>;
+  svgo?: SvgoOptions,
   svgr?: Record<string, unknown>;
 }
 
