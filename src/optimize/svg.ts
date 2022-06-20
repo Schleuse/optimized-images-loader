@@ -1,4 +1,4 @@
-import SVGO from 'svgo';
+import { optimize } from 'svgo';
 import { LoaderOptions } from '../options';
 import { ImageOptions } from '../parseQuery';
 
@@ -17,10 +17,12 @@ const optimizeSvg = async (
   options?: LoaderOptions['svgo'],
 ): Promise<Buffer> => {
   // optimize the image using svgo
-  const svgo = new SVGO(options);
-  const { data } = await svgo.optimize(image.toString());
+  const result = await optimize(image.toString(), options);
+  if (result.modernError) {
+    throw result.modernError;
+  }
 
-  return Buffer.from(data);
+  return Buffer.from(result.data);
 };
 
 export default optimizeSvg;
